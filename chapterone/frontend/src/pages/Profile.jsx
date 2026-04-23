@@ -48,8 +48,8 @@ export default function Profile() {
   const initials = user?.username?.slice(0, 2).toUpperCase() || '??'
 
   return (
-    <main className="page-wrapper">
-      <div className="container" style={{ paddingTop: 36, paddingBottom: 60, maxWidth: 800 }}>
+    <main className="page-wrapper fade-in">
+      <div className="container" style={{ paddingBottom: 60, maxWidth: 800 }}>
         <h1 className="page-title">Profile</h1>
         <p className="page-subtitle">Your account overview</p>
 

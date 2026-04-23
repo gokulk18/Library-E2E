@@ -64,8 +64,8 @@ export default function Catalog() {
   }
 
   return (
-    <main className="page-wrapper">
-      <div className="container" style={{ paddingTop: 36, paddingBottom: 60 }}>
+    <main className="page-wrapper fade-in">
+      <div className="container" style={{ paddingBottom: 60 }}>
         <h1 className="page-title">Book Catalog</h1>
         <p className="page-subtitle">Discover your next great read</p>
 
