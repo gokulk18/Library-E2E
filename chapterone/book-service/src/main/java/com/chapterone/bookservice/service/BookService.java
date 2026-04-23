@@ -15,6 +15,11 @@ public class BookService {
     private final BookRepository bookRepository;
 
     public List<Book> getAllBooks(String genre, String search) {
+        // Treat "All" as no genre filter
+        if ("All".equalsIgnoreCase(genre)) {
+            genre = null;
+        }
+
         if (genre != null && !genre.isBlank() && search != null && !search.isBlank()) {
             return bookRepository.searchByGenreAndKeyword(genre, search);
         } else if (genre != null && !genre.isBlank()) {
