@@ -31,6 +31,8 @@ public class Book {
 
     private String description;
 
+    private String coverImage;
+
     private String isbn;
 
     private int publishedYear;
