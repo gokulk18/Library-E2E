@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const USER_SERVICE = import.meta.env.VITE_USER_SERVICE_URL || 'http://localhost:8082'
+const USER_SERVICE = import.meta.env.VITE_USER_SERVICE_URL || ''
 
 const userApi = axios.create({ baseURL: USER_SERVICE })
 

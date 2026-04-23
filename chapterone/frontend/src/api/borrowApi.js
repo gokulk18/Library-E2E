@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BORROW_SERVICE = import.meta.env.VITE_BORROW_SERVICE_URL || 'http://localhost:8083'
+const BORROW_SERVICE = import.meta.env.VITE_BORROW_SERVICE_URL || ''
 
 const borrowApi = axios.create({ baseURL: BORROW_SERVICE })
 

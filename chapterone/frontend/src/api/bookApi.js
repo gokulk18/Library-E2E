@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BOOK_SERVICE = import.meta.env.VITE_BOOK_SERVICE_URL || 'http://localhost:8081'
+const BOOK_SERVICE = import.meta.env.VITE_BOOK_SERVICE_URL || ''
 
 const bookApi = axios.create({ baseURL: BOOK_SERVICE })
 
