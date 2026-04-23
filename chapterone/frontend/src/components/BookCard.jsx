@@ -1,13 +1,13 @@
 const GENRE_STYLES = {
-  Fiction:    { bg: 'linear-gradient(135deg,#312e81,#4c1d95)', emoji: '✨' },
-  Science:    { bg: 'linear-gradient(135deg,#164e63,#0e7490)', emoji: '🔬' },
-  History:    { bg: 'linear-gradient(135deg,#713f12,#92400e)', emoji: '🏛️' },
-  Fantasy:    { bg: 'linear-gradient(135deg,#831843,#9d174d)', emoji: '🐉' },
-  Technology: { bg: 'linear-gradient(135deg,#064e3b,#065f46)', emoji: '💻' },
-  Biography:  { bg: 'linear-gradient(135deg,#7c2d12,#9a3412)', emoji: '🧑‍💼' },
+  Fiction:    { bg: 'linear-gradient(135deg,#4c1d95,#6d28d9)', emoji: '✨' },
+  Science:    { bg: 'linear-gradient(135deg,#0e7490,#06b6d4)', emoji: '🔬' },
+  History:    { bg: 'linear-gradient(135deg,#92400e,#d97706)', emoji: '🏛️' },
+  Fantasy:    { bg: 'linear-gradient(135deg,#9d174d,#ec4899)', emoji: '🐉' },
+  Technology: { bg: 'linear-gradient(135deg,#065f46,#10b981)', emoji: '💻' },
+  Biography:  { bg: 'linear-gradient(135deg,#9a3412,#f97316)', emoji: '🧑‍💼' },
 }
 
-const DEFAULT_STYLE = { bg: 'linear-gradient(135deg,#1e293b,#334155)', emoji: '📖' }
+const DEFAULT_STYLE = { bg: 'linear-gradient(135deg,#1e1b35,#2e1065)', emoji: '📖' }
 
 export default function BookCard({ book, onClick }) {
   const style = GENRE_STYLES[book.genre] || DEFAULT_STYLE
