@@ -61,6 +61,7 @@ public class UserService {
                         "email", user.getEmail(),
                         "totalBorrowed", totalBorrowed,
                         "currentlyBorrowing", currentlyBorrowing,
+                        "daysPerLoan", user.getDaysPerLoan(),
                         "createdAt", user.getCreatedAt().toString()
                 )
         );

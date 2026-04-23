@@ -65,6 +65,7 @@ services:
     environment:
       MONGO_URI: mongodb://mongo:27017/chapterone_users
       JWT_SECRET: chapterone-super-secret-jwt-key-change-in-production-256bits
+      BORROW_SERVICE_URL: http://borrow-service:8083
     depends_on:
       mongo:
         condition: service_healthy
@@ -89,6 +90,7 @@ services:
     environment:
       MONGO_URI: mongodb://mongo:27017/chapterone_borrows
       BOOK_SERVICE_URL: http://book-service:8081
+      USER_SERVICE_URL: http://user-service:8082
     depends_on:
       mongo:
         condition: service_healthy

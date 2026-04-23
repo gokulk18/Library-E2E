@@ -58,6 +58,7 @@ public class UserController {
                         "email", u.getEmail(),
                         "totalBorrowed", u.getTotalBorrowed(),
                         "currentlyBorrowing", u.getCurrentlyBorrowing(),
+                        "daysPerLoan", u.getDaysPerLoan(),
                         "createdAt", u.getCreatedAt().toString()
                 )))
                 .orElse(ResponseEntity.notFound().build());
@@ -78,7 +79,8 @@ public class UserController {
                         "username", u.getUsername(),
                         "email", u.getEmail(),
                         "totalBorrowed", u.getTotalBorrowed(),
-                        "currentlyBorrowing", u.getCurrentlyBorrowing()
+                        "currentlyBorrowing", u.getCurrentlyBorrowing(),
+                        "daysPerLoan", u.getDaysPerLoan()
                 )))
                 .orElse(ResponseEntity.notFound().build());
     }

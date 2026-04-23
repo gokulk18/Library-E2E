@@ -32,4 +32,7 @@ public class User {
     private int totalBorrowed;
 
     private int currentlyBorrowing;
+
+    @Builder.Default
+    private int daysPerLoan = 14;
 }

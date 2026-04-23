@@ -109,7 +109,7 @@ export default function Profile() {
             <div className="profile-stat-label">Currently Borrowing</div>
           </div>
           <div className="profile-stat-card">
-            <div className="profile-stat-value" style={{ fontSize: '1.2rem' }}>14</div>
+            <div className="profile-stat-value">{user?.daysPerLoan ?? 14}</div>
             <div className="profile-stat-label">Days per Loan</div>
           </div>
         </div>
