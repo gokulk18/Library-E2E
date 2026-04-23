@@ -1,6 +1,7 @@
 package com.chapterone.borrowservice.service;
 
 import com.chapterone.borrowservice.client.BookServiceClient;
+import com.chapterone.borrowservice.client.UserServiceClient;
 import com.chapterone.borrowservice.model.BorrowRecord;
 import com.chapterone.borrowservice.repository.BorrowRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ public class BorrowService {
 
     private final BorrowRepository borrowRepository;
     private final BookServiceClient bookServiceClient;
+    private final UserServiceClient userServiceClient;
 
     public BorrowRecord borrowBook(String userId, String bookId) {
         // Check if user already has this book active
@@ -38,6 +40,9 @@ public class BorrowService {
 
         // Decrement availability
         bookServiceClient.decrementAvailability(bookId);
+
+        // Update user borrow count
+        userServiceClient.incrementBorrowCount(userId);
 
         // Create borrow record
         LocalDateTime now = LocalDateTime.now();
@@ -65,6 +70,9 @@ public class BorrowService {
 
         // Increment book availability
         bookServiceClient.incrementAvailability(record.getBookId());
+
+        // Update user borrow count
+        userServiceClient.decrementBorrowCount(record.getUserId());
 
         record.setStatus("RETURNED");
         record.setReturnDate(LocalDateTime.now());

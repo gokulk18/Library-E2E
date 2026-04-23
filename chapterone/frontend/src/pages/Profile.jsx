@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext.jsx'
 import Toast from '../components/Toast.jsx'
 import { updateProfile } from '../api/userApi.js'
@@ -11,6 +11,19 @@ export default function Profile() {
   const [username, setUsername] = useState(user?.username || '')
   const [saving, setSaving] = useState(false)
   const [toasts, setToasts] = useState([])
+
+  useEffect(() => {
+    if (token) {
+      import('../api/userApi.js').then(({ getProfile }) => {
+        getProfile(token)
+          .then(data => {
+            updateUser(data)
+            setUsername(data.username)
+          })
+          .catch(err => console.error('Failed to refresh profile', err))
+      })
+    }
+  }, [token])
 
   const addToast = (message, type = 'info') => {
     setToasts(prev => [...prev, { id: ++toastId, message, type }])
